@@ -1,0 +1,231 @@
+body{
+    background-image: url(../images/grass.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    /* height: 2000px; */
+}
+
+
+.road-container{
+    width: 600px;
+    min-height: 100vh;
+    margin: auto;
+    background-color:#222;
+    color: #ffffff;
+    border-left: 20px solid white;
+    border-right: 20px solid white;
+    /* position: relative; */
+}
+
+.road-cent-line1{
+    width: 20px;
+    margin: auto;
+    background-color: #ffffff;
+    height: 150px;
+    animation-name: animation2;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    position: absolute;
+    display: none;
+    top: 200px;
+
+}
+
+.road-cent-line2{
+    width: 20px;
+    margin: auto;
+    background-color: #ffffff;
+    height: 150px;
+    animation-name: animation3;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
+    position: absolute;
+    display: none;
+    top: -150px;
+}
+
+.road-cent-line3{
+    width: 20px;
+    margin: auto;
+    background-color: #ffffff;
+    height: 150px;
+    animation-name: animation4;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-delay: 6s;
+    position: absolute;
+    display: none;
+    top: -150px;
+}
+
+@keyframes animation2 {
+    from{
+        top: -150px;
+    }
+
+    to{
+        top: 115vh;
+    }
+}
+
+@keyframes animation3 {
+    from{
+        top: -150px;
+    }
+
+    to{
+        top: 115vh;
+    }
+}
+
+@keyframes animation4 {
+    from{
+        top: -150px;
+    }
+
+    to{
+        top: 115vh;
+    }
+}
+
+.bg-dark{
+    position: absolute;
+    background-color: #222222d5;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+
+}
+
+
+.game-info{
+    position: absolute;
+    width: 500px;
+    height: 250px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    top: 20%;
+    left: 31.5%;
+    box-shadow: 0px 0px 10px 1px #75ab3b;
+    
+
+}
+
+#score-update{
+    font-size: 25px !important;
+    font-weight: bold;
+}
+
+
+.game-info h2{
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.game-info ul{
+    padding: 0;
+    margin-top: 0;
+}
+
+.game-info li{
+    font-size: large;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    
+}
+
+.game-info1{
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    top: 20%;
+    left: 31.5%;
+    box-shadow: 0px 0px 10px 1px #75ab3b;
+    display: none;
+    padding-top: 2%;
+}
+
+
+.game-info1 h2{
+    text-align: center;
+}
+
+.game-info1 ul{
+    padding: 0;
+}
+
+.game-info1 li{
+    font-size: large;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    
+}
+
+
+#my-car{
+    width: 50px;
+    height: 100px;
+    position: absolute;
+    border-radius: 8px;
+    left: 400px;
+    z-index: 1;
+    display: none;
+
+
+}
+
+#score-cont{
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: white;
+    left: 5%;
+    top: 5%;
+}
+
+#score{
+    text-align: center;
+
+}
+.cars{
+    width: 50px;
+    height: 100px;
+    position: absolute;
+      top: 0px;
+    left: 400px;
+    transform: rotate(180deg);
+    border-radius: 10px;
+    z-index: 1;
+
+}
+
+.car-animate{
+    animation-name: animation1;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animation1 {
+    from{
+        top: -100px;
+    }
+
+    to{
+        top: 115vh;
+    }
+    
+}
+
