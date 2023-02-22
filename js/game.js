@@ -11,7 +11,7 @@ function gameplay1() {
     document.getElementsByClassName("game-info")[0].style.display = "none";
     document.getElementsByClassName("game-info1")[0].style.display = "none";
     document.getElementById("my-car").style.display = "block";
-    document.getElementById("my-car").style.top = innerHeight - 100 + "px";
+    document.getElementById("my-car").style.top = innerHeight - 200 + "px";
     document.getElementById("my-car").style.left = roadposition.left + 30 + "px";
     document.getElementsByClassName("road-cent-line1")[0].style.left = roadposition.left + roadposition.width/2 + "px";
     document.getElementsByClassName("road-cent-line2")[0].style.left = roadposition.left + roadposition.width/2 + "px";
@@ -71,6 +71,23 @@ document.addEventListener("keydown", function (e) {
         document.getElementById("my-car").style.top = bottomside - 110 + "px";
     }
 });
+
+
+function cardirection(e) {
+    console.log(e);
+    let leftside = document.getElementById("my-car").getBoundingClientRect().left;
+    let bottomside = document.getElementById("my-car").getBoundingClientRect().bottom;
+    if (e == "ArrowRight" && leftside < roadposition.right - 80) {
+        // console.log(leftside)
+        document.getElementById("my-car").style.left = leftside + 10 + "px";
+    } else if (e == "ArrowLeft" && leftside > roadposition.left + 20) {
+        document.getElementById("my-car").style.left = leftside - 10 + "px";
+    } else if (e == "ArrowDown" && bottomside < innerHeight) {
+        document.getElementById("my-car").style.top = bottomside - 100 + 10 + "px";
+    } else if (e == "ArrowUp" && bottomside > 100) {
+        document.getElementById("my-car").style.top = bottomside - 110 + "px";
+    }
+};
 
 
 
@@ -288,7 +305,7 @@ function carspositions() {
             positionstorecar10l = Math.round(document.getElementsByClassName("cars")[9].getBoundingClientRect().left);
             diffleft10 = positionstorecar10l - positionstoremycarl;
             difftopcar10 = positionstorecar10 - positionstoremycar;
-            setTimeout(car10, 10);
+            setTimeout(car10,10);
         }, 45100);
     }
 }

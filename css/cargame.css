@@ -11,6 +11,25 @@ body{
 }
 
 
+.arrow-right{
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+}
+
+.arrow-left{
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+}
+
+
+.material-symbols-outlined{
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
 .road-container{
     width: 600px;
     min-height: 100vh;
