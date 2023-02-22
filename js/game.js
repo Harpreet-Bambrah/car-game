@@ -13,9 +13,9 @@ function gameplay1() {
     document.getElementById("my-car").style.display = "block";
     document.getElementById("my-car").style.top = innerHeight - 100 + "px";
     document.getElementById("my-car").style.left = roadposition.left + 30 + "px";
-    document.getElementsByClassName("road-cent-line1")[0].style.left = roadposition.left + 330 + "px";
-    document.getElementsByClassName("road-cent-line2")[0].style.left = roadposition.left + 330 + "px";
-    document.getElementsByClassName("road-cent-line3")[0].style.left = roadposition.left + 330 + "px";
+    document.getElementsByClassName("road-cent-line1")[0].style.left = roadposition.left + roadposition.width/2 + "px";
+    document.getElementsByClassName("road-cent-line2")[0].style.left = roadposition.left + roadposition.width/2 + "px";
+    document.getElementsByClassName("road-cent-line3")[0].style.left = roadposition.left + roadposition.width/2+ "px";
     document.getElementsByClassName("road-cent-line1")[0].style.display = "block";
     document.getElementsByClassName("road-cent-line2")[0].style.display = "block";
     document.getElementsByClassName("road-cent-line3")[0].style.display = "block";
@@ -84,27 +84,48 @@ let ifvalue = true;
 function createcars() {
     console.log(roadposition);
     let carssrc = ["images/car1.png", "images/car4.png", "images/car2.png", "images/car3.png", "images/car5.png", "images/car6.png", "images/car7.png", "images/car8.png", "images/car3.png", "images/car5.png"];
-    if (a < 10) {
+    if (a < carssrc.length) {
         let car1 = document.createElement("img");
         car1.className = "cars car-animate";
         car1.src = carssrc[a];
         document.getElementsByClassName("road-container")[0].appendChild(car1);
     }
-    //    let randomno = Math.floor((Math.random()*550)+roadposition.left+10)
+    // let randomno = [];
+    // for(i=0; i< carssrc.length; i++)
+    // {
+    //    let randomnos = Math.floor((Math.random()*550)+roadposition.left+10);
+    //    if(randomnos)
+    //    if(randomno.includes(randomnos)){
+
+    //    let randomnos = Math.floor((Math.random()*550)+roadposition.left+10);
+    //    if(randomno.includes(randomnos)){
+
+    //    }else{
+    //     for(y=0; y< randomno.length; y++)
+    //     {
+    //         if(randomno[y] >){
+    //        randomno.push(randomnos);
+    //     }
+    //    }
+    //    }else{
+    //        randomno.push(randomnos);
+    //    }
+    // }
+    // console.log(randomno);
     let randomno = [
-        roadposition.left + 307,
-        roadposition.left + 127,
-        roadposition.left + 17,
-        roadposition.left + 427,
-        roadposition.left + 547,
-        roadposition.left + 247,
-        roadposition.left + 77,
-        roadposition.left + 367,
-        roadposition.left + 487,
-        roadposition.left + 187,
+        roadposition.left + roadposition.width*51/100,
+        roadposition.left + roadposition.width*21/100,
+        roadposition.left + roadposition.width*3/100,
+        roadposition.left + roadposition.width*71/100,
+        roadposition.left + roadposition.width*85/100,
+        roadposition.left + roadposition.width*41/100,
+        roadposition.left + roadposition.width*13/100,
+        roadposition.left + roadposition.width*61/100,
+        roadposition.left + roadposition.width*81/100,
+        roadposition.left + roadposition.width*31/100,
     ];
 
-    if (a < 10) {
+    if (a < carssrc.length) {
         document.getElementsByClassName("cars")[a].style.left = randomno[a] + "px";
         a++;
     }
@@ -257,6 +278,7 @@ function carspositions() {
             positionstorecar9l = Math.round(document.getElementsByClassName("cars")[8].getBoundingClientRect().left);
             diffleft9 = positionstorecar9l - positionstoremycarl;
             difftopcar9 = positionstorecar9 - positionstoremycar;
+            setTimeout(car9, 10);
         }, 40100);
     }
 
@@ -266,6 +288,7 @@ function carspositions() {
             positionstorecar10l = Math.round(document.getElementsByClassName("cars")[9].getBoundingClientRect().left);
             diffleft10 = positionstorecar10l - positionstoremycarl;
             difftopcar10 = positionstorecar10 - positionstoremycar;
+            setTimeout(car10, 10);
         }, 45100);
     }
 }

@@ -101,6 +101,7 @@ body{
     left: 0px;
     right: 0px;
     bottom: 0px;
+    z-index: 3;
 
 }
 
@@ -114,7 +115,8 @@ body{
     top: 20%;
     left: 31.5%;
     box-shadow: 0px 0px 10px 1px #75ab3b;
-    
+    z-index: 4;  
+    text-align: center;  
 
 }
 
@@ -127,6 +129,10 @@ body{
 .game-info h2{
     text-align: center;
     margin-bottom: 5px;
+}
+
+.game-info h3{
+    margin: 5px 0px;
 }
 
 .game-info ul{
@@ -153,12 +159,15 @@ body{
     box-shadow: 0px 0px 10px 1px #75ab3b;
     display: none;
     padding-top: 2%;
+    z-index: 5;
 }
 
 
 .game-info1 h2{
     text-align: center;
 }
+
+
 
 .game-info1 ul{
     padding: 0;
@@ -194,6 +203,7 @@ body{
     background-color: white;
     left: 5%;
     top: 5%;
+    z-index: 2;
 }
 
 #score{
@@ -229,3 +239,102 @@ body{
     
 }
 
+
+
+@media screen and (min-width:850px) and (max-width:1100px) {
+
+   
+    .game-info{
+        left: 22.5%;
+    }
+   
+    .game-info1{
+        left: 22.5%;
+    }
+
+}
+
+@media screen and (min-width:651px) and (max-width:849px) {
+
+   
+    .game-info{
+        left: 15.5%;
+    }
+   
+    .game-info1{
+        left: 15.5%;
+    }
+
+}
+
+
+
+
+
+@media screen and (min-width:550px) and (max-width:650px) {
+    .road-container{
+        width: 500px;
+        border-left: 10px solid white;
+        border-right: 10px solid white;
+    }
+
+    
+.game-info{
+    width: 400px;
+    height: 250px;
+    left: 18.5%;
+}
+    
+
+    
+.game-info1{
+    width: 400px;
+    height: 250px;
+    left: 18.5%;
+}
+    
+}
+
+@media screen and (min-width:450px) and (max-width:549px) {
+    .road-container{
+        width: 420px;
+        border-left: 10px solid white;
+        border-right: 10px solid white;
+    }
+
+    
+.game-info{
+    width: 400px;
+    height: 250px;
+    left: 10%;
+}
+    
+.game-info1{
+    width: 400px;
+ 
+    left: 10%;
+}
+    
+}
+
+@media screen and (min-width:340px) and (max-width:449px) {
+    .road-container{
+        width: 330px;
+        border-left: 5px solid white;
+        border-right: 5px solid white;
+    }
+
+    
+.game-info{
+    width: 330px;
+    /* height: 250px; */
+    left: 5%;
+}
+    
+.game-info1{
+    width: 330px;
+    /* height: 250px; */
+    left: 5%;
+}
+    
+}
