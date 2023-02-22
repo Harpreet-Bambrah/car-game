@@ -1,2 +1,6 @@
 # car-game
-in this game used html css and javascript play this game and give me feedback this is my beginnner project **this game is computer version only**
+* Link: https://harpreet-bambrah.github.io/car-game/
+* This repository includes car-game files and it has one page.
+* It is written in HTML, CSS, JavaScript and it is **computer version only**
+* I used car images in game which i download from google.
+* In this game you simply control car with the keyboard keys **left right top bottom arrow key**
