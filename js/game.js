@@ -1,8 +1,11 @@
-if(innerWidth<1100){
+// if(innerWidth<1100){
 
-    document.documentElement.requestFullscreen()
-}
-// get road left position in pixels
+// }
+
+
+
+  
+ 
 let roadposition = document.getElementsByClassName("road-container")[0].getBoundingClientRect();
 
 
@@ -21,6 +24,7 @@ function gameplay1() {
     document.getElementsByClassName("road-cent-line1")[0].style.display = "block";
     document.getElementsByClassName("road-cent-line2")[0].style.display = "block";
     document.getElementsByClassName("road-cent-line3")[0].style.display = "block";
+    document.documentElement.requestFullscreen()
     createcars();
     positiondetect();
     carspositions();
