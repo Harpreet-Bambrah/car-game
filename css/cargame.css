@@ -14,20 +14,25 @@ body{
 .arrow-right{
     position: absolute;
     right: 50px;
-    bottom: 50px;
+    bottom: 100px;
+    z-index: 2;
 }
 
 .arrow-left{
     position: absolute;
     left: 50px;
-    bottom: 50px;
+    bottom: 100px;
+    z-index: 2;
 }
 
 
 .material-symbols-outlined{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.623);
     border-radius: 5px;
-    border: 2px solid black;
+    border: 2px solid rgba(0, 0, 0, 0.705);
+    font-size: 35px !important;
+    cursor: pointer;
+    margin: 5px;
 }
 
 .road-container{

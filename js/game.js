@@ -78,6 +78,9 @@ document.addEventListener("keydown", function (e) {
     }
 });
 
+document.documentElement.addEventListener('click', function(e){
+        console.log(e)
+})
 
 function cardirection(e) {
     console.log(e);
@@ -93,6 +96,8 @@ function cardirection(e) {
     } else if (e == "ArrowUp" && bottomside > 100) {
         document.getElementById("my-car").style.top = bottomside - 110 + "px";
     }
+
+   
 };
 
 
