@@ -7,8 +7,11 @@
   
  
 let roadposition = document.getElementsByClassName("road-container")[0].getBoundingClientRect();
-
-
+let gameinfowd = innerWidth-document.getElementsByClassName("game-info")[0].getBoundingClientRect().width
+document.getElementsByClassName("game-info")[0].style.top=outerHeight/4+'px';
+document.getElementsByClassName("game-info")[0].style.left=gameinfowd/2+"px";
+document.getElementsByClassName("game-info1")[0].style.top=outerHeight/4+'px';
+document.getElementsByClassName("game-info1")[0].style.left=gameinfowd/2+'px';
 
 // if click gameplay then this function call 
 function gameplay1() {
@@ -24,6 +27,8 @@ function gameplay1() {
     document.getElementsByClassName("road-cent-line1")[0].style.display = "block";
     document.getElementsByClassName("road-cent-line2")[0].style.display = "block";
     document.getElementsByClassName("road-cent-line3")[0].style.display = "block";
+    document.getElementById('arrow-cont1').style.bottom=outerHeight/2+'px'
+    document.getElementById('arrow-cont2').style.bottom=outerHeight/2+'px'
     document.documentElement.requestFullscreen()
     createcars();
     positiondetect();
@@ -88,13 +93,13 @@ function cardirection(e) {
     let bottomside = document.getElementById("my-car").getBoundingClientRect().bottom;
     if (e == "ArrowRight" && leftside < roadposition.right - 80) {
         // console.log(leftside)
-        document.getElementById("my-car").style.left = leftside + 10 + "px";
+        document.getElementById("my-car").style.left = leftside + 15 + "px";
     } else if (e == "ArrowLeft" && leftside > roadposition.left + 20) {
-        document.getElementById("my-car").style.left = leftside - 10 + "px";
+        document.getElementById("my-car").style.left = leftside - 15 + "px";
     } else if (e == "ArrowDown" && bottomside < innerHeight) {
-        document.getElementById("my-car").style.top = bottomside - 100 + 10 + "px";
+        document.getElementById("my-car").style.top = bottomside - 100 + 15 + "px";
     } else if (e == "ArrowUp" && bottomside > 100) {
-        document.getElementById("my-car").style.top = bottomside - 110 + "px";
+        document.getElementById("my-car").style.top = bottomside - 115 + "px";
     }
 
    
@@ -154,7 +159,11 @@ function createcars() {
     ];
 
     if (a < carssrc.length) {
+
+        let carwidth =roadposition.width*8/100
         document.getElementsByClassName("cars")[a].style.left = randomno[a] + "px";
+        document.getElementsByClassName("cars")[a].style.width = carwidth + "px";
+        document.getElementsByClassName("cars")[a].style.height = carwidth*2 + "px";
         a++;
     }
 
@@ -438,3 +447,5 @@ function positiondetect() {
 
     score++;
 }
+
+
