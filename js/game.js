@@ -1,13 +1,8 @@
 // if(innerWidth<1100){
 
-// }
-
-
-
-  
  
 let roadposition = document.getElementsByClassName("road-container")[0].getBoundingClientRect();
-let gameinfowd = innerWidth-document.getElementsByClassName("game-info")[0].getBoundingClientRect().width
+let gameinfowd = outerWidth-document.getElementsByClassName("game-info")[0].getBoundingClientRect().width
 document.getElementsByClassName("game-info")[0].style.top=outerHeight/4+'px';
 document.getElementsByClassName("game-info")[0].style.left=gameinfowd/2+"px";
 document.getElementsByClassName("game-info1")[0].style.top=outerHeight/4+'px';
@@ -18,8 +13,11 @@ function gameplay1() {
     document.getElementsByClassName("bg-dark")[0].style.display = "none";
     document.getElementsByClassName("game-info")[0].style.display = "none";
     document.getElementsByClassName("game-info1")[0].style.display = "none";
+    let carwidth =roadposition.width*8/100
+    document.getElementById("my-car").style.width=carwidth;
+    document.getElementById("my-car").style.height=carwidth*2;
     document.getElementById("my-car").style.display = "block";
-    document.getElementById("my-car").style.top = innerHeight - 200 + "px";
+    document.getElementById("my-car").style.top = innerHeight -20 + "px";
     document.getElementById("my-car").style.left = roadposition.left + 30 + "px";
     document.getElementsByClassName("road-cent-line1")[0].style.left = roadposition.left + roadposition.width/2 + "px";
     document.getElementsByClassName("road-cent-line2")[0].style.left = roadposition.left + roadposition.width/2 + "px";
@@ -30,6 +28,7 @@ function gameplay1() {
     document.getElementById('arrow-cont1').style.bottom=outerHeight/2+'px'
     document.getElementById('arrow-cont2').style.bottom=outerHeight/2+'px'
     document.documentElement.requestFullscreen()
+    
     createcars();
     positiondetect();
     carspositions();
