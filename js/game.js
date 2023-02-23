@@ -1,5 +1,7 @@
+if(innerWidth<1100){
 
-
+    document.documentElement.requestFullscreen()
+}
 // get road left position in pixels
 let roadposition = document.getElementsByClassName("road-container")[0].getBoundingClientRect();
 
