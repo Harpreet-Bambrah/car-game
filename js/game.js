@@ -1,10 +1,13 @@
 // if(innerWidth<1100){
 
 
+let roadposition;
+let gameinfowd; 
 
- 
-let roadposition = document.getElementsByClassName("road-container")[0].getBoundingClientRect();
-let gameinfowd = outerWidth-document.getElementsByClassName("full-screen")[0].getBoundingClientRect().width
+function fullscreen(){
+    
+ roadposition = document.getElementsByClassName("road-container")[0].getBoundingClientRect();
+ gameinfowd = outerWidth-document.getElementsByClassName("full-screen")[0].getBoundingClientRect().width
 document.getElementsByClassName("game-info")[0].style.top=outerHeight/4+'px';
 document.getElementsByClassName("game-info")[0].style.left=gameinfowd/2+"px";
 document.getElementsByClassName("game-info1")[0].style.top=outerHeight/4+'px';
@@ -13,8 +16,6 @@ document.getElementsByClassName("full-screen")[0].style.left=gameinfowd/2+'px';
 document.getElementsByClassName("full-screen")[0].style.top=outerHeight/4+'px';
 
 
-
-function fullscreen(){
     document.getElementsByClassName('game-info')[0].style.display='block'
     document.getElementsByClassName("full-screen")[0].style.display='none'
     document.documentElement.requestFullscreen()
