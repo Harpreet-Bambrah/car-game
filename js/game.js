@@ -156,7 +156,7 @@ function createcars() {
     let randomno = [
         roadposition.left + roadposition.width*51/100,
         roadposition.left + roadposition.width*21/100,
-        roadposition.left + roadposition.width*3/100,
+        roadposition.left + roadposition.width*5/100,
         roadposition.left + roadposition.width*71/100,
         roadposition.left + roadposition.width*85/100,
         roadposition.left + roadposition.width*41/100,
