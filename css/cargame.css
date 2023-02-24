@@ -137,7 +137,7 @@ body{
     height: 250px;
     background-color: #ffffff;
     border-radius: 30px;
-   
+    display: none;
    
     box-shadow: 0px 0px 10px 1px #75ab3b;
     z-index: 4;  
@@ -206,6 +206,19 @@ body{
     
 }
 
+.full-screen{
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    top: 20%;
+    left: 31.5%;
+    box-shadow: 0px 0px 10px 1px #75ab3b;
+    text-align: center;
+    padding-top: 2%;
+    z-index: 6;
+}
 
 #my-car{
     width: 50px;
@@ -318,6 +331,12 @@ body{
     left: 18.5%;
 }
     
+.full-screen{
+    width: 400px;
+    height: 250px;
+   
+}
+    
 }
 
 @media screen and (min-width:450px) and (max-width:549px) {
@@ -340,6 +359,12 @@ body{
     left: 10%;
 }
     
+.full-screen{
+    width: 400px;
+ 
+    left: 10%;
+}
+    
 }
 
 @media screen and (min-width:340px) and (max-width:449px) {
@@ -357,6 +382,13 @@ body{
 }
     
 .game-info1{
+    width: 330px;
+    /* height: 250px; */
+    left: 5%;
+}
+    
+    
+.full-screen{
     width: 330px;
     /* height: 250px; */
     left: 5%;

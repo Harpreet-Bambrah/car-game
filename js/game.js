@@ -1,23 +1,35 @@
 // if(innerWidth<1100){
 
+
+
  
 let roadposition = document.getElementsByClassName("road-container")[0].getBoundingClientRect();
-let gameinfowd = outerWidth-document.getElementsByClassName("game-info")[0].getBoundingClientRect().width
+let gameinfowd = outerWidth-document.getElementsByClassName("full-screen")[0].getBoundingClientRect().width
 document.getElementsByClassName("game-info")[0].style.top=outerHeight/4+'px';
 document.getElementsByClassName("game-info")[0].style.left=gameinfowd/2+"px";
 document.getElementsByClassName("game-info1")[0].style.top=outerHeight/4+'px';
 document.getElementsByClassName("game-info1")[0].style.left=gameinfowd/2+'px';
+document.getElementsByClassName("full-screen")[0].style.left=gameinfowd/2+'px';
+document.getElementsByClassName("full-screen")[0].style.top=outerHeight/4+'px';
 
+
+
+function fullscreen(){
+    document.getElementsByClassName('game-info')[0].style.display='block'
+    document.getElementsByClassName("full-screen")[0].style.display='none'
+    document.documentElement.requestFullscreen()
+}
+let carwidth1;
 // if click gameplay then this function call 
 function gameplay1() {
     document.getElementsByClassName("bg-dark")[0].style.display = "none";
     document.getElementsByClassName("game-info")[0].style.display = "none";
     document.getElementsByClassName("game-info1")[0].style.display = "none";
-    let carwidth =roadposition.width*8/100
-    document.getElementById("my-car").style.width=carwidth;
-    document.getElementById("my-car").style.height=carwidth*2;
+    carwidth1 =roadposition.width*8/100
+    document.getElementById("my-car").style.width=carwidth1+'px';
+    document.getElementById("my-car").style.height=carwidth1*2+'px';
     document.getElementById("my-car").style.display = "block";
-    document.getElementById("my-car").style.top = innerHeight -20 + "px";
+    document.getElementById("my-car").style.top = innerHeight -100 + "px";
     document.getElementById("my-car").style.left = roadposition.left + 30 + "px";
     document.getElementsByClassName("road-cent-line1")[0].style.left = roadposition.left + roadposition.width/2 + "px";
     document.getElementsByClassName("road-cent-line2")[0].style.left = roadposition.left + roadposition.width/2 + "px";
@@ -27,7 +39,7 @@ function gameplay1() {
     document.getElementsByClassName("road-cent-line3")[0].style.display = "block";
     document.getElementById('arrow-cont1').style.bottom=outerHeight/2+'px'
     document.getElementById('arrow-cont2').style.bottom=outerHeight/2+'px'
-    document.documentElement.requestFullscreen()
+   
     
     createcars();
     positiondetect();
@@ -70,24 +82,20 @@ document.addEventListener("keydown", function (e) {
     console.log(e);
     let leftside = document.getElementById("my-car").getBoundingClientRect().left;
     let bottomside = document.getElementById("my-car").getBoundingClientRect().bottom;
-    if (e.key == "ArrowRight" && leftside < roadposition.right - 80) {
+    if (e.key == "ArrowRight" && leftside < roadposition.right - carwidth1*2) {
         // console.log(leftside)
         document.getElementById("my-car").style.left = leftside + 10 + "px";
-    } else if (e.key == "ArrowLeft" && leftside > roadposition.left + 20) {
+    } else if (e.key == "ArrowLeft" && leftside > roadposition.left+20) {
         document.getElementById("my-car").style.left = leftside - 10 + "px";
     } else if (e.key == "ArrowDown" && bottomside < innerHeight) {
-        document.getElementById("my-car").style.top = bottomside - 100 + 10 + "px";
+        document.getElementById("my-car").style.top = bottomside - (carwidth1*2)+ 15 + "px";
     } else if (e.key == "ArrowUp" && bottomside > 100) {
-        document.getElementById("my-car").style.top = bottomside - 110 + "px";
+        document.getElementById("my-car").style.top = bottomside - (carwidth1*2)-15 + "px";
     }
 });
 
-document.documentElement.addEventListener('click', function(e){
-        console.log(e)
-})
-
 function cardirection(e) {
-    console.log(e);
+    // console.log(e);
     let leftside = document.getElementById("my-car").getBoundingClientRect().left;
     let bottomside = document.getElementById("my-car").getBoundingClientRect().bottom;
     if (e == "ArrowRight" && leftside < roadposition.right - 80) {
@@ -96,9 +104,9 @@ function cardirection(e) {
     } else if (e == "ArrowLeft" && leftside > roadposition.left + 20) {
         document.getElementById("my-car").style.left = leftside - 15 + "px";
     } else if (e == "ArrowDown" && bottomside < innerHeight) {
-        document.getElementById("my-car").style.top = bottomside - 100 + 15 + "px";
-    } else if (e == "ArrowUp" && bottomside > 100) {
-        document.getElementById("my-car").style.top = bottomside - 115 + "px";
+        document.getElementById("my-car").style.top = bottomside -(carwidth1*2) + 15 + "px";
+    } else if (e == "ArrowUp" && bottomside > carwidth1*2) {
+        document.getElementById("my-car").style.top = bottomside - (carwidth1*2)-15 + "px";
     }
 
    
@@ -114,7 +122,7 @@ let a = 0;
 let ifvalue = true;
 
 function createcars() {
-    console.log(roadposition);
+    // console.log(roadposition);
     let carssrc = ["images/car1.png", "images/car4.png", "images/car2.png", "images/car3.png", "images/car5.png", "images/car6.png", "images/car7.png", "images/car8.png", "images/car3.png", "images/car5.png"];
     if (a < carssrc.length) {
         let car1 = document.createElement("img");
@@ -347,11 +355,12 @@ function positiondetect() {
     positionstorecar1l = Math.round(document.getElementsByClassName("cars")[0].getBoundingClientRect().left);
     diffleft1 = positionstorecar1l - positionstoremycarl;
     difftopcar1 = positionstorecar1 - positionstoremycar;
-    console.log(positionstorecar1 - positionstoremycar);
+    // console.log(positionstorecar1 - positionstoremycar);
     const time = setTimeout(positiondetect, 10);
     //  console.log(diffleft1)
-
-    if (difftopcar1 < 100 && difftopcar1 > -100 && diffleft1 < 50 && diffleft1 > -50) {
+    let carwidth =roadposition.width*8/100;    
+    console.log(-carwidth*2)
+    if (difftopcar1 < carwidth*2 && difftopcar1 > -carwidth*2 && diffleft1 < carwidth && diffleft1 > -carwidth) {
         document.getElementsByClassName("cars")[0].classList.remove("car-animate");
         document.getElementsByClassName("road-container")[0].style.display = "none";
         document.getElementById("score-cont").style.display = "none";
@@ -359,7 +368,7 @@ function positiondetect() {
         document.getElementsByClassName("game-info1")[0].style.display = "block";
         clearTimeout(time);
         ifvalue = false;
-    } else if (difftopcar2 < 100 && difftopcar2 > -100 && diffleft2 < 50 && diffleft2 > -50) {
+    } else if (difftopcar2 < carwidth*2 && difftopcar2 > -carwidth*2 && diffleft2 < carwidth && diffleft2 > -carwidth) {
         document.getElementsByClassName("cars")[1].classList.remove("car-animate");
         document.getElementsByClassName("road-container")[0].style.display = "none";
         document.getElementById("score-cont").style.display = "none";
@@ -367,7 +376,7 @@ function positiondetect() {
         document.getElementsByClassName("game-info1")[0].style.display = "block";
         clearTimeout(time);
         ifvalue = false;
-    } else if (difftopcar3 < 100 && difftopcar3 > -100 && diffleft3 < 50 && diffleft3 > -50) {
+    } else if (difftopcar3 < carwidth*2 && difftopcar3 > -carwidth*2 && diffleft3 < carwidth && diffleft3 > -carwidth) {
         document.getElementsByClassName("cars")[2].classList.remove("car-animate");
         document.getElementsByClassName("road-container")[0].style.display = "none";
         document.getElementById("score-cont").style.display = "none";
@@ -375,7 +384,7 @@ function positiondetect() {
         document.getElementsByClassName("game-info1")[0].style.display = "block";
         clearTimeout(time);
         ifvalue = false;
-    } else if (difftopcar4 < 100 && difftopcar4 > -100 && diffleft4 < 50 && diffleft4 > -50) {
+    } else if (difftopcar4 < carwidth*2 && difftopcar4 > -carwidth*2 && diffleft4 < carwidth && diffleft4 > -carwidth) {
         document.getElementsByClassName("cars")[3].classList.remove("car-animate");
         document.getElementsByClassName("road-container")[0].style.display = "none";
         document.getElementById("score-cont").style.display = "none";
@@ -383,7 +392,7 @@ function positiondetect() {
         document.getElementsByClassName("game-info1")[0].style.display = "block";
         clearTimeout(time);
         ifvalue = false;
-    } else if (difftopcar5 < 100 && difftopcar5 > -100 && diffleft5 < 50 && diffleft5 > -50) {
+    } else if (difftopcar5 < carwidth*2  && difftopcar5 > -carwidth*2 && diffleft5 < carwidth && diffleft5 > -carwidth) {
         document.getElementsByClassName("cars")[4].classList.remove("car-animate");
         document.getElementsByClassName("road-container")[0].style.display = "none";
         document.getElementById("score-cont").style.display = "none";
@@ -391,7 +400,7 @@ function positiondetect() {
         document.getElementsByClassName("game-info1")[0].style.display = "block";
         clearTimeout(time);
         ifvalue = false;
-    } else if (difftopcar6 < 100 && difftopcar6 > -100 && diffleft6 < 50 && diffleft6 > -50) {
+    } else if (difftopcar6 < carwidth*2 && difftopcar6 > -carwidth*2 && diffleft6 < carwidth && diffleft6 > -carwidth) {
         document.getElementsByClassName("cars")[5].classList.remove("car-animate");
         document.getElementsByClassName("road-container")[0].style.display = "none";
         document.getElementById("score-cont").style.display = "none";
@@ -399,7 +408,7 @@ function positiondetect() {
         document.getElementsByClassName("game-info1")[0].style.display = "block";
         clearTimeout(time);
         ifvalue = false;
-    } else if (difftopcar7 < 100 && difftopcar7 > -100 && diffleft7 < 50 && diffleft7 > -50) {
+    } else if (difftopcar7 < carwidth*2 && difftopcar7 > -carwidth*2 && diffleft7 < carwidth && diffleft7 > -carwidth) {
         document.getElementsByClassName("cars")[6].classList.remove("car-animate");
         document.getElementsByClassName("road-container")[0].style.display = "none";
         document.getElementById("score-cont").style.display = "none";
@@ -407,7 +416,7 @@ function positiondetect() {
         document.getElementsByClassName("game-info1")[0].style.display = "block";
         clearTimeout(time);
         ifvalue = false;
-    } else if (difftopcar8 < 100 && difftopcar8 > -100 && diffleft8 < 50 && diffleft8 > -50) {
+    } else if (difftopcar8 < carwidth*2 && difftopcar8 > -carwidth*2 && diffleft8 < carwidth && diffleft8 > -carwidth) {
         document.getElementsByClassName("cars")[7].classList.remove("car-animate");
         document.getElementsByClassName("road-container")[0].style.display = "none";
         document.getElementById("score-cont").style.display = "none";
@@ -415,7 +424,7 @@ function positiondetect() {
         document.getElementsByClassName("game-info1")[0].style.display = "block";
         clearTimeout(time);
         ifvalue = false;
-    } else if (difftopcar9 < 100 && difftopcar9 > -100 && diffleft9 < 50 && diffleft9 > -50) {
+    } else if (difftopcar9 < carwidth*2 && difftopcar9 > -carwidth*2 && diffleft9 < carwidth && diffleft9 > -carwidth) {
         document.getElementsByClassName("cars")[8].classList.remove("car-animate");
         document.getElementsByClassName("road-container")[0].style.display = "none";
         document.getElementById("score-cont").style.display = "none";
@@ -423,7 +432,7 @@ function positiondetect() {
         document.getElementsByClassName("game-info1")[0].style.display = "block";
         clearTimeout(time);
         ifvalue = false;
-    } else if (difftopcar10 < 100 && difftopcar10 > -100 && diffleft10 < 50 && diffleft10 > -50) {
+    } else if (difftopcar10 < carwidth*2 && difftopcar10 > -carwidth*2 && diffleft10 < carwidth && diffleft10 > -carwidth) {
         document.getElementsByClassName("cars")[9].classList.remove("car-animate");
         document.getElementsByClassName("road-container")[0].style.display = "none";
         document.getElementById("score-cont").style.display = "none";
@@ -435,7 +444,7 @@ function positiondetect() {
 
     document.getElementById("score").innerHTML = "Score :" + score;
     document.getElementById("score-update").innerHTML = "Your Score :" + score;
-    console.log(score);
+    // console.log(score);
 
     let carlen = document.getElementsByClassName("cars").length;
 
