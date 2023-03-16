@@ -16,6 +16,8 @@ body{
     right: 30px;
     bottom: 50px;
     z-index: 2;
+    display: none;
+   
 }
 
 .arrow-left{
@@ -23,6 +25,8 @@ body{
     left: 30px;
     bottom: 50px;
     z-index: 2;
+    display: none;
+   
   
 }
 
@@ -394,5 +398,16 @@ body{
     left: 5%;
 }
     
+}
+
+
+@media screen and (max-width:1200px){
+    .arrow-left{
+        display: block;
+    }
+
+    .arrow-right{
+        display: block;
+    }
 }
 

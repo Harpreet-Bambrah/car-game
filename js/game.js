@@ -38,8 +38,8 @@ function gameplay1() {
     document.getElementsByClassName("road-cent-line1")[0].style.display = "block";
     document.getElementsByClassName("road-cent-line2")[0].style.display = "block";
     document.getElementsByClassName("road-cent-line3")[0].style.display = "block";
-    document.getElementById('arrow-cont1').style.bottom=outerHeight/2+'px'
-    document.getElementById('arrow-cont2').style.bottom=outerHeight/2+'px'
+    // document.getElementById('arrow-cont1').style.bottom=outerHeight/2+'px'
+    // document.getElementById('arrow-cont2').style.bottom=outerHeight/2+'px'
    
     
     createcars();

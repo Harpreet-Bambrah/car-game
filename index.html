@@ -11,18 +11,19 @@
 <body>
 
         <div class="arrow-right" id="arrow-cont1">
-            <span class="material-symbols-outlined" id="topkey" onclick="cardirection('ArrowUp')">
-                arrow_upward
+           
+            <span class="material-symbols-outlined" id="leftkey" onclick="cardirection('ArrowLeft')" style="cursor: pointer;" >
+                arrow_back
             </span>
-            <span class="material-symbols-outlined" id="rightkey" onclick="cardirection('ArrowRight')">
+            <span class="material-symbols-outlined" id="rightkey" onclick="cardirection('ArrowRight')" style="cursor: pointer;">
                 arrow_forward
                 </span>
         </div>
         <div class="arrow-left" id="arrow-cont2">
-            <span class="material-symbols-outlined" id="leftkey" onclick="cardirection('ArrowLeft')">
-                arrow_back
+            <span class="material-symbols-outlined" id="topkey" onclick="cardirection('ArrowUp')" style="cursor: pointer;">
+                arrow_upward
             </span>
-            <span class="material-symbols-outlined" id="bottomkey" onclick="cardirection('ArrowDown')">
+            <span class="material-symbols-outlined" id="bottomkey" onclick="cardirection('ArrowDown')" style="cursor: pointer;">
                 arrow_downward
             </span>
         </div>
@@ -85,7 +86,7 @@
     </div>
 
     <div class="full-screen">
-        <p>Please rotate your device screen & click <br> 'full-screen' button for better experience</p>
+        <p>Please rotate your (Mobile) device screen & click <br> 'full-screen' button for better experience</p>
         <button onclick="fullscreen()"> Full Screen</button>
     </div>
     <script src="js/game.js"></script>
