@@ -14,7 +14,7 @@ body{
 .arrow-right{
     position: absolute;
     right: 30px;
-    bottom: 50px;
+    bottom: 100px;
     z-index: 2;
     display: none;
    
@@ -23,7 +23,7 @@ body{
 .arrow-left{
     position: absolute;
     left: 30px;
-    bottom: 50px;
+    bottom: 100px;
     z-index: 2;
     display: none;
    
@@ -35,7 +35,7 @@ body{
     background-color: rgba(255, 255, 255, 0.623);
     border-radius: 5px;
     border: 2px solid rgba(0, 0, 0, 0.705);
-    font-size: 50px !important;
+    font-size: 40px !important;
     cursor: pointer;
     margin: 5px;
 }
